@@ -4,35 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEB GALLERY</title>
+    <title>Web Gallery</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="photos">
         <div class="photo nishat">
-            <p>be a warrior,</p>
+            <p>Be a warrior,</p>
             <p>Click</p>
-            <p>not a worrior</p>
+            <p>not a worrier</p>
         </div>
         <div class="photo nedu">
             <p>Embrace reality,</p>
             <p>any</p>
-            <p>Even if it burns</p>
+            <p>even if it burns</p>
         </div>
         <div class="photo neha">
-            <p>it's the little</p>
-            <p>one</p>
-            <p>things in life</p>
+            <p>It's the little</p>
+            <p>things</p>
+            <p>in life</p>
         </div>
         <div class="photo nura">
             <p>Make it</p>
-            <p>of</p>
             <p>happen</p>
         </div>
         <div class="photo mahee">
             <p>You are</p>
-            <p>These</p>
             <p>your home</p>
         </div>
     </div>
@@ -40,21 +38,22 @@
     <script>
         const photos = document.querySelectorAll('.photo');
 
-        function toggleActive(e)
-        {
+        function toggleActive(e) {
+            // Check if the transition ended for a property containing 'flex'
             if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active');
-      }
+                this.classList.toggle('open-active');
+            }
         }
 
-        function toggleOpen(e)
-        {
+        function toggleOpen() {
             this.classList.toggle('open');
         }
          
-        photos.forEach(photo => photo.addEventListener('click',toggleOpen));
-        photos.forEach(photo => photo.addEventListener('transitionend', toggleActive));
-
+        // Add event listeners to each photo
+        photos.forEach(photo => {
+            photo.addEventListener('click', toggleOpen);
+            photo.addEventListener('transitionend', toggleActive);
+        });
     </script>
     
 </body>
